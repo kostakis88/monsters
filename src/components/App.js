@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import CardList from './CardList';
 import '../index.css';
 import SearchBox from './SearchBox';
@@ -27,13 +27,14 @@ class App extends Component {
       monster.name.toLowerCase().includes(searchField.toLowerCase())
     );
     return (
-      <Fragment>
+      <div className="App">
+        <h1>Pick Your Monster</h1>
         <SearchBox 
-          placeholder="Type here to search"
+          placeholder="Search monsters"
           handleChange={this.handleChange} 
         />
         <CardList monsters={filterdMonsters}/>
-      </Fragment>
+      </div>
     );
   }
 }
